@@ -19,6 +19,8 @@ let liv = 3;
 // Turbanen
 let turban;
 
+let fruit;
+
 //knap
 let button;
 
@@ -37,6 +39,7 @@ function setup() {
     x = rad;
     // parametrene til konstruktøren er (x, y, bredde, dybde, speed)
     turban = new Kurv(670, 100, 70, 50, 10);
+    newfruit = new Fruit(x, y, 20, -10, 4, 255);
     // Nedenunder er koden for den knap der skal genstarte spillet. når man taber.
     // Den fungerer ved at skabe en knap, der ved et tryk genstarter spillet. Hide og show bliver brugt til at fortælle hvornår knappen skal vises på skærmen
     button = createButton("genstart spil");
@@ -56,6 +59,7 @@ function draw() {
     // Nedenuner er der et if-statement der fortæller hvad der skal ske, hvis ens liv er større end 0, og hvad der skal ske, hvis ens liv er mindre end 0
     if (liv > 0) {
     move();
+    newfruit.moveball();
     checkScore();
     textAlign(LEFT);
     textSize(12);
@@ -93,14 +97,18 @@ function display() {
         tid -= 1;
     }
     if (tid < 100) {
-        //orange.display();
         fill(col);
         ellipse(x, y, rad * 2, rad * 2);
     }
 
     // Her vises turbanen - foreløbig blot en firkant
     turban.tegn();
+    // her tegnes den nye frugtbold
+    newfruit.tegnball();
+
 }
+
+
 function move() {
     //Her skal vi sørge for at appelsinen bevæger sig, hvis den er startet
     if (tid <= 0) {
@@ -136,6 +144,7 @@ function shootNew() {
      xspeed = random(4);
      tid = random(400);
 }
+
 
 function restart() {
     liv = 3;
