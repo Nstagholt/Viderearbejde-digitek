@@ -142,7 +142,7 @@ function shootNew() {
      y = 550;
      yspeed = newspeed;
      xspeed = random(4);
-     tid = random(400);
+     //tid = random(400);
 }
 
 

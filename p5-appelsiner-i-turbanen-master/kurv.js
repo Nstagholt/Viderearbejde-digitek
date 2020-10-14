@@ -47,6 +47,7 @@ class Kurv {
             return true;
         }
         else {
+            
             return false;
         }
         
