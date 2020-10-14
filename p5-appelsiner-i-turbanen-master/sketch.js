@@ -38,7 +38,7 @@ function setup() {
     newspeed = yspeed;
     x = rad;
     // parametrene til konstruktøren er (x, y, bredde, dybde, speed)
-    turban = new Kurv(670, 100, 70, 50, 10);
+    turban = new Kurv(670, 100, 70, 50, 100);
     newfruit = new Fruit(x, y, 20, -10, 4, 255);
     // Nedenunder er koden for den knap der skal genstarte spillet. når man taber.
     // Den fungerer ved at skabe en knap, der ved et tryk genstarter spillet. Hide og show bliver brugt til at fortælle hvornår knappen skal vises på skærmen

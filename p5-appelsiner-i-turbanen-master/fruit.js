@@ -38,6 +38,10 @@ class Fruit {
             liv -= 1;
         }
         if (this.yspeed >= 0 && turban.grebet(this.x, this.y, rad)) {
+            this.x = this.sx;
+            this.y = this.sy;
+            this.yspeed = this.syspeed;
+            this.xspeed = this.sxspeed;
                 score += 1;
                 //Her kaldes funktionen for at skifte baggrundsfarve    
                 backgroundcolor();
